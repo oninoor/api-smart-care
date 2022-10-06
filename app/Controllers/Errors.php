@@ -3,14 +3,14 @@
 namespace App\Controllers;
 
 use CodeIgniter\API\ResponseTrait;
-use CodeIgniter\Controller;
+use CodeIgniter\RESTful\ResourceController;
 
-class Errors extends BaseController
+class Errors extends ResourceController
 {
     use ResponseTrait;
     public function forbidden()
     {
         // Forbidden action
-        return $this->failForbidden("Access Forbidden");
+        return $this->fail("Forbidden Access");
     }
 }

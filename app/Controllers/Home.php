@@ -2,10 +2,23 @@
 
 namespace App\Controllers;
 
-class Home extends BaseController
+use CodeIgniter\RESTful\ResourceController;
+
+class Home extends ResourceController
 {
-    public function index()
-    {
-        return view('welcome_message');
-    }
+  protected $format    = 'json';
+
+  public function index()
+  {
+    $respond = [
+      'status'    => 200,
+      'error'     => null,
+      'messages'  => [
+        'success'   => 'Ready to connect'
+      ],
+      'data'      => null,
+    ];
+
+    return $this->respond($respond, 200);
+  }
 }

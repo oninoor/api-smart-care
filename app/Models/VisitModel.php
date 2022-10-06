@@ -14,7 +14,7 @@ class VisitModel extends Model
   protected $returnType     = "object";
   protected $useSoftDeletes = true;
 
-  protected $allowedFields = ["id_hospital", "nik"];
+  protected $allowedFields = ["id_hospital", "nik", "id_user_req"];
 
   protected $useTimestamps = true;
   protected $createdField  = "created_at";
