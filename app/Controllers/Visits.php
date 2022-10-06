@@ -41,16 +41,16 @@ class Visits extends ResourceController
 
         if ($patient) {
             $respond = [
-                'status'    => 409,
-                'error'     => 409,
-                'message'   => 'Error : Data already exist!',
+                'status'    => 200,
+                'error'     => 200,
+                'message'   => 'Data saved!',
                 'data'      => null
             ];
-            return $this->respond($respond, 409);
+            return $this->respond($respond, 200);
         }
+        $data = $this->request->getVar();
 
         // Get all data send by POST
-        $data = $this->request->getVar();
 
         // Try to insert into visit tables
         if (!$this->visitModel->save($data)) {
